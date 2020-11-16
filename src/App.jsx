@@ -1,12 +1,17 @@
 import "./App.css";
+import Navigation from "./components/Navigation";
+import HomePage from "./pages/HomePage";
+import SinglePageNote from "./pages/SingleNotePage";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Notes</h1>
-      </header>
-    </div>
+    <>
+      <Navigation />
+      <HomePage />
+      {/* <SinglePageNote> */}
+      <Footer />
+    </>
   );
 }
 
