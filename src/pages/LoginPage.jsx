@@ -6,7 +6,9 @@ const LoginPage = () => {
   return (
     <>
       <section className="login">
-        <h3>Login Page</h3>
+        <h3 className="sign_up">Sign up  </h3>
+        <small> with </small> 
+        <p className="brand">iNote </p>
         <StyledFirebaseAuth  uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
       </section>
     </>

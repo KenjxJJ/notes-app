@@ -10,20 +10,24 @@ import LoginPage from "./pages/LoginPage";
 import AddNewNotePage from "./pages/AddNewNotePage";
 import Footer from "./components/Footer";
 import Page404Error from './pages/Page404Error';
+import AuthContextProvider from "./contexts/AuthContext";
+import ProtectedRoute  from './components/ProtectedRoute';
 
 function App() {
   return (
     <>
-      <Navigation />
+      <AuthContextProvider>
       <Router>
+      <Navigation />
         <Switch>
           <Route path="/" exact component={HomePage} />
           <Route path="/login" component={LoginPage} />
           <Route path="/note" component={SinglePageNote} />
-          <Route path="/addNewNote" component={AddNewNotePage} />
+          <ProtectedRoute path="/addNewNote" component={AddNewNotePage} />
           <Route component={Page404Error} />
         </Switch>
       </Router>
+      </AuthContextProvider>
       <Footer />
     </>
   );

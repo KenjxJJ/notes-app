@@ -20,7 +20,7 @@ export const uiConfig = {
     signInFlow: 'popup',
 
     // Redirect to /addNewNote after sign in is successful. Alternatively you can provide a callbacks.signInSuccess function.
-    signInSuccessUrl: '/addNewNote',
+    signInSuccessUrl: '/',
 
     // Display Email and GitHub as auth providers.
     signInOptions: [

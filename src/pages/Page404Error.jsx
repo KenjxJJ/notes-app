@@ -6,7 +6,7 @@ const Page404Error = () => {
   return (
     <>
       <div className="error404">
-        <h3>Unfortunately this path <code>{location.pathname}</code> doesn't exist...</h3>
+        <h3>Unfortunately this path   <code>{location.pathname}</code>  doesn't exist...</h3>
       </div>
     </>
   );
