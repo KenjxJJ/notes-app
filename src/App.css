@@ -1,13 +1,24 @@
-main{
-     margin: 2rem auto;
+main {
+  margin: 2rem auto;
 }
 
-.error404{
-    font-size: 6rem;
-    padding: 7.5rem 2.5rem;
+.login {
+  padding: 0.4rem .3rem;
+  margin: 1.5rem auto;
+  border: 1px solid #111;
+  border-radius: 1rem;
+  text-align: center;
 }
-footer{
-     position: absolute;
-     bottom: 0.2rem;
-     padding: 0.3rem 0.2rem 2.3rem;
+.add-new-note {
+  padding: 2rem 4rem;
+}
+.error404 {
+  font-size: 6rem;
+  padding: 7.5rem 2.5rem;
+}
+
+footer {
+  position: absolute;
+  bottom: 0.2rem;
+  padding: 0.3rem 0.2rem 2.3rem;
 }

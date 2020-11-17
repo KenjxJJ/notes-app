@@ -7,6 +7,7 @@ import Navigation from "./components/Navigation";
 import HomePage from "./pages/HomePage";
 import SinglePageNote from "./pages/SingleNotePage";
 import LoginPage from "./pages/LoginPage";
+import AddNewNotePage from "./pages/AddNewNotePage";
 import Footer from "./components/Footer";
 import Page404Error from './pages/Page404Error';
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="/" exact component={HomePage} />
           <Route path="/login" component={LoginPage} />
           <Route path="/note" component={SinglePageNote} />
+          <Route path="/addNewNote" component={AddNewNotePage} />
           <Route component={Page404Error} />
         </Switch>
       </Router>
