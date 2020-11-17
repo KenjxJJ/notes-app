@@ -4,7 +4,7 @@ const HomePage = () =>{
 
      return(
          <>
-         <main className="">
+         <main className="container-fluid">
          <h1>Home Page!!</h1>
          </main>
          </>

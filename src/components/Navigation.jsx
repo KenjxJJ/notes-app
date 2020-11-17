@@ -26,7 +26,7 @@ const Navigation = () => {
               <NavLink href="/login">Get Started!</NavLink>
             </NavItem>
             <NavItem className="ml-auto pr-3">
-              <NavLink href="/all_notes">All Notes</NavLink>
+              <NavLink href="/">All Notes</NavLink>
             </NavItem>            
           </Nav>         
         </Collapse>
