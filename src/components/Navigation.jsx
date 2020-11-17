@@ -45,6 +45,9 @@ const Navigation = () => {
         <NavItem className="ml-auto pr-2">
           <Link className="nav-link" to="/addNewNote">Add New</Link>
         </NavItem>
+        <NavItem className="ml-auto pr-2">
+          <Link className="nav-link" to="/profile">Profile</Link>
+        </NavItem>
         <NavItem className="ml-auto pr-1">
           <Button
             className="logout pl-3 pr-3"

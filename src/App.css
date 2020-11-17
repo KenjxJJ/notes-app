@@ -27,6 +27,29 @@ main {
 .add-new-note {
   padding: 2rem 4rem;
 }
+.profile-details{
+  display: flex;
+  max-width: 34rem;
+  justify-content: space-around;
+  align-content: space-around;
+
+}
+.profile-details > *{
+  padding: .5rem;
+  font-size: 1.1rem;
+}
+
+.profile-details > .profile-img{
+  flex: 1 1 50%;
+  order: 1;
+}
+
+.profile-img{
+   display: block;
+   width: 45%;
+   border-radius: 50%;
+   margin: auto;
+}
 .error404 {
   font-size: 6rem;
   padding: 7.5rem 2.5rem;
