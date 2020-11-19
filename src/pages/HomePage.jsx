@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { NotesContext } from "../contexts/NotesContext";
-
+import { Link } from 'react-router-dom';
 import { Card, CardBody, CardTitle, CardText } from "reactstrap";
 
 const HomePage = () => {
@@ -24,6 +24,7 @@ const HomePage = () => {
                       note.createdOn.split("T")[0]
                     ).toLocaleDateString()}
                   </small>
+                  <Link to="/note">View Details</Link>
                 </CardBody>
               </Card>
             );
