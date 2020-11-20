@@ -74,12 +74,11 @@ const reducerFunction = (state, action) => {
         {
           _id: "5fb434874ff2d42f95ae06f2",
           index: 4,
-          subject: "duis incididunt nostrud dolor sunt",
-          createdOn: "2018-05-27T11:26:13 -03:00",
-          category: "non",
-          about:
-            "Id in nostrud ipsum ullamco magna ea. Mollit do qui tempor do occaecat eiusmod deserunt magna id. Tempor aliqua anim ut amet dolor veniam tempor veniam cillum minim excepteur aliquip ad proident. Enim do in in excepteur amet non velit ex voluptate ad sint cillum pariatur.\r\n",
-        },
+          subject: action.note.subject,
+          createdOn: action.note.date,
+          category: action.note.category,
+          about: action.note.aboutNote
+        }
       ];
 
     case "DELETE_NOTE":

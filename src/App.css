@@ -53,8 +53,21 @@ main {
   margin-top: -0.5rem;
   margin-bottom: 1.7rem;
 }
+
+/*  Add New Note Page */
+/* ----------------------------- */
+
 .add-new-note {
   padding: 2rem 4rem;
+}
+form label,
+form input {
+  margin-top: 1.2rem;
+  margin-bottom: 0rem;
+}
+
+textarea {
+  margin-top: 1rem;
 }
 
 /*  Profile Page */

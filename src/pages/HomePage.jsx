@@ -76,16 +76,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-
-{
-  /* <section className="note">
-< className="note-title">
-    <p>{note.subject}</p>
-</div>
-<div className="note-details">
-    <p className="note-category">{note.category}</p>
-    <small className="note-date">Created : {note.createdOn}</small>
-    <p>{note.about}</p>
-</div>
-</section> */
-}

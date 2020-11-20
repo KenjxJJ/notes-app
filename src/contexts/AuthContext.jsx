@@ -19,7 +19,7 @@ const AuthContextProvider = (props) => {
       console.log("AuthContextProvider -> isLoggedIn", isLoggedIn);
       console.log("====================================");
     });
-  }, [user]);
+  }, [user, isLoggedIn]);
 
   return (
     <AuthContext.Provider
