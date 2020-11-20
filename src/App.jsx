@@ -13,6 +13,8 @@ import Page404Error from "./pages/Page404Error";
 import AuthContextProvider from "./contexts/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ProfilePage from "./pages/ProfilePage";
+import EditNotePage from './pages/EditNotePage';
+
 import NotesContextProvider from "./contexts/NotesContext";
 
 function App() {
@@ -26,6 +28,7 @@ function App() {
               <Route path="/" exact component={HomePage} />
               <Route path="/login" component={LoginPage} />
               <Route path="/note" component={SinglePageNote} />
+              <Route path="/edit/:id" component={EditNotePage} />
               <ProtectedRoute path="/addNewNote" component={AddNewNotePage} />
               <ProtectedRoute path="/profile" component={ProfilePage} />
               <Route component={Page404Error} />
