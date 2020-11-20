@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import { Redirect } from "react-router-dom";
 
 import { Form, FormGroup, Input, Label, Button } from "reactstrap";
 import { NotesContext } from "../contexts/NotesContext";
