@@ -21,7 +21,7 @@ const AddNote = () => {
 
   return (
     <>
-      <section class="add-note-form w-50">
+      <section class="add-note-form">
         <Form onSubmit={addNewNote} action="/">
           <FormGroup>
             <Label for="subject">Subject : </Label>

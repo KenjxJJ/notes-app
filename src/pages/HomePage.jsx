@@ -9,6 +9,7 @@ import {
   UncontrolledCollapse,
   Button,
 } from "reactstrap";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   const { notes, dispatch } = useContext(NotesContext);
@@ -17,7 +18,7 @@ const HomePage = () => {
 
   // Delete functionality
   const deleteNote = (date) => {
-    console.log( date );
+    console.log(date);
     dispatch({ type: "DELETE_NOTE", payload: date });
     window.location.reload();
   };
@@ -50,19 +51,32 @@ const HomePage = () => {
                     ).toLocaleDateString()}
                   </small>
                   <UncontrolledCollapse toggler={"#toggler" + index}>
-                    <CardBody>
+                    <CardBody className="text-justify pl-1">
                       <CardText>{note.about}</CardText>
                     </CardBody>
                     <div className="d-flex justify-content-between">
                       <Button
-                        onClick={() => deleteNote(new Date(
-                          note.createdOn.split("T")[0]
-                        ).toLocaleDateString())}
+                        onClick={() =>
+                          deleteNote(
+                            new Date(
+                              note.createdOn.split("T")[0]
+                            ).toLocaleDateString()
+                          )
+                        }
                         className="btn btn-danger pl-3 pr-3"
                       >
                         Delete
                       </Button>
-                      {/* <Button onClick={} className="btn btn-info pl-4 pr-4">Edit</Button> */}
+                      <Link
+                        to={`/edit/${note.index}`}
+                        className="mr-3"
+                      >
+                        <Button
+                          className="btn btn-info pl-4 pr-4 "
+                        >
+                          Edit
+                        </Button>
+                      </Link>{" "}
                     </div>
                   </UncontrolledCollapse>
                 </Card>
