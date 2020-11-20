@@ -13,7 +13,9 @@ main {
   max-width: 22rem;
   border: 1px solid #111;
   border-radius: 0.3rem;
-  padding: 0.6rem 0.7rem 1.5rem 1.1rem;
+
+  padding: 0.3rem 0.5rem 1.5rem;
+
   margin: 1.3rem 1.3rem 0.4rem 0rem;
 }
 
@@ -53,9 +55,23 @@ main {
   margin-top: -0.5rem;
   margin-bottom: 1.7rem;
 }
+
+/*  Add New Note Page */
+/* ----------------------------- */
+
 .add-new-note {
   padding: 2rem 4rem;
 }
+form label,
+form input {
+  margin-top: 1.2rem;
+  margin-bottom: 0rem;
+}
+
+textarea {
+  margin-top: 1rem;
+}
+
 
 /*  Profile Page */
 .profile-details {
