@@ -12,21 +12,14 @@ import {
 
 const HomePage = () => {
   const { notes, dispatch } = useContext(NotesContext);
+  // localStorage.setItem("notes", JSON.stringify(notes));
+  console.log(notes);
 
   // Delete functionality
-  const deleteNote = (e) => {
-    console.log("Target Index", e.currentTarget);
-    console.log(
-      "INde",
-      e.currentTarget.parentElement.parentElement.parentElement.querySelector(".note .creation-date").textContent
-    );
-    const removedNoteDate = e.currentTarget.parentElement.parentElement.parentElement.querySelector(".note .creation-date").textContent;
-    const remainingNotes = notes.filter((note) =>new Date(
-      note.createdOn.split("T")[0]
-    ).toLocaleDateString() !== removedNoteDate);
-    console.log(remainingNotes);
-    dispatch({ type: "DELETE_NOTE", notes: remainingNotes });
-    // window.location.reload();
+  const deleteNote = (date) => {
+    console.log( date );
+    dispatch({ type: "DELETE_NOTE", payload: date });
+    window.location.reload();
   };
 
   return (
@@ -51,7 +44,7 @@ const HomePage = () => {
                     {note.subject}
                   </CardTitle>
                   <p>{note.category}</p>
-                  <small className="creation-date"> 
+                  <small className="creation-date">
                     {new Date(
                       note.createdOn.split("T")[0]
                     ).toLocaleDateString()}
@@ -62,7 +55,9 @@ const HomePage = () => {
                     </CardBody>
                     <div className="d-flex justify-content-between">
                       <Button
-                        onClick={(e, index) => deleteNote(e, index)}
+                        onClick={() => deleteNote(new Date(
+                          note.createdOn.split("T")[0]
+                        ).toLocaleDateString())}
                         className="btn btn-danger pl-3 pr-3"
                       >
                         Delete

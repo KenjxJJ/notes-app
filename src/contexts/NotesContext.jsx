@@ -1,5 +1,17 @@
 import React, { createContext, useReducer } from "react";
 
+// create store for the data
+let notesStore = JSON.parse(localStorage.getItem("notes"));
+
+const getNotesStore = () => {
+  // Data store(notes), and initialize an empty store
+
+  if (notesStore === null) {
+    notesStore = allNotes;
+    localStorage.setItem("notes", JSON.stringify(notesStore));
+  }
+};
+
 let allNotes = [
   {
     _id: "5fb43487c3fd9ef7ac1a8478",
@@ -48,6 +60,9 @@ let allNotes = [
   },
 ];
 
+//get notes
+getNotesStore();
+
 // create context
 export const NotesContext = createContext();
 
@@ -68,8 +83,15 @@ const reducerFunction = (state, action) => {
       ];
 
     case "DELETE_NOTE":
-       console.log( "Deleteing note before "+ state);
-      return state;
+      notesStore = [
+        ...state.filter(
+          (note) =>
+            new Date(note.createdOn.split("T")[0]).toLocaleDateString() !==
+            action.payload
+        ),
+      ];
+      localStorage.setItem("notes", JSON.stringify(notesStore));
+      return;
     default:
       return state;
   }
@@ -77,7 +99,8 @@ const reducerFunction = (state, action) => {
 
 // Context Provider
 const NotesContextProvider = (props) => {
-  const [notes, dispatch] = useReducer(reducerFunction, allNotes);
+  //obtain data from localStorage
+  const [notes, dispatch] = useReducer(reducerFunction, notesStore);
 
   return (
     <NotesContext.Provider value={{ notes: notes, dispatch: dispatch }}>
