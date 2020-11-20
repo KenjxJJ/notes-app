@@ -10,25 +10,24 @@ main {
 }
 .note {
   min-width: 17rem;
-   max-width: 22rem;
-   border: 1px solid #111;
-   border-radius: .3rem;
-   padding: 0.3rem 0.5rem 1.5rem;
-   margin: 1.3rem 1.3rem .4rem 0rem;
-   
+  max-width: 22rem;
+  border: 1px solid #111;
+  border-radius: 0.3rem;
+  padding: 0.6rem 0.7rem 1.5rem 1.1rem;
+  margin: 1.3rem 1.3rem 0.4rem 0rem;
 }
 
-.note-title{
+.note-title {
   font-size: 2rem;
   font-weight: 500;
   margin-bottom: 1.5rem;
   text-transform: capitalize;
 }
-.note-category{
-   text-transform: uppercase;
-   font-weight: 400;
+.note-category {
+  text-transform: uppercase;
+  font-weight: 400;
 }
-.note  .note-date{
+.note .note-date {
   font-style: italic;
   margin-bottom: 1.2rem;
   display: block;
@@ -48,42 +47,39 @@ main {
   margin: 0.6rem auto;
 }
 
-.brand{
-   padding-top: 0rem;
-   font-size: 4rem;
-   margin-top: -0.5rem;
-   margin-bottom: 1.7rem;
+.brand {
+  padding-top: 0rem;
+  font-size: 4rem;
+  margin-top: -0.5rem;
+  margin-bottom: 1.7rem;
 }
 .add-new-note {
   padding: 2rem 4rem;
 }
 
-
 /*  Profile Page */
-.profile-details{
+.profile-details {
   display: flex;
   max-width: 34rem;
   justify-content: space-around;
   align-content: space-around;
-
 }
-.profile-details > *{
-  padding: .5rem;
+.profile-details > * {
+  padding: 0.5rem;
   font-size: 1.1rem;
 }
 
-.profile-details > .profile-img{
+.profile-details > .profile-img {
   flex: 1 1 50%;
   order: 1;
 }
 
-.profile-img{
-   display: block;
-   width: 45%;
-   border-radius: 50%;
-   margin: auto;
+.profile-img {
+  display: block;
+  width: 45%;
+  border-radius: 50%;
+  margin: auto;
 }
-
 
 /*  Error Page */
 .error404 {

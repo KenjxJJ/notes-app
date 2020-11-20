@@ -68,7 +68,8 @@ const reducerFunction = (state, action) => {
       ];
 
     case "DELETE_NOTE":
-      return [];
+       console.log( "Deleteing note before "+ state);
+      return state;
     default:
       return state;
   }
