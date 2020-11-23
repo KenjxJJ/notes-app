@@ -63,19 +63,18 @@ export const NotesContext = createContext();
 
 const reducerFunction = (state, action) => {
   switch (action.type) {
-    case "CREATE_NOTE":
+    case "CREATE_NOTE":      
       return [
         ...state,
         {
-          index: state.length() + 1,
+          index: state.length + 1,
           subject: action.note.subject,
           createdOn: action.note.date,
           category: action.note.category,
           about: action.note.aboutNote,
-        },
+        }
       ];
-
-    case "DELETE_NOTE":
+      case "DELETE_NOTE":
       notesStore = [
         ...state.filter(
           (note) =>
@@ -98,8 +97,7 @@ const reducerFunction = (state, action) => {
       console.log([...updatedNotes]);
       notesStore = [...updatedNotes];
       localStorage.setItem("notes", JSON.stringify(notesStore));
-      // return;
-
+      return;
     default:
       return state;
   }

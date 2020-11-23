@@ -18,12 +18,9 @@ const HomePage = () => {
   const currentTheme = AppTheme[theme];
 
   const { notes, dispatch } = useContext(NotesContext);
-  // localStorage.setItem("notes", JSON.stringify(notes));
-  console.log(notes);
-
+  
   // Delete functionality
   const deleteNote = (date) => {
-    console.log(date);
     dispatch({ type: "DELETE_NOTE", payload: date });
     window.location.reload();
   };

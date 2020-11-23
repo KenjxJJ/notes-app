@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { useHistory } from "react-router-dom";
 
 import { Form, FormGroup, Input, Label, Button } from "reactstrap";
 import { NotesContext } from "../contexts/NotesContext";
@@ -15,22 +16,29 @@ const AddNote = () => {
   const [aboutNote, setAboutNote] = useState("");
   const { dispatch } = useContext(NotesContext);
 
+  let history = useHistory();
+
+  // add a new note functionality
   const addNewNote = (e) => {
-    
     e.preventDefault();
     dispatch({
       type: "CREATE_NOTE",
       note: { subject, date, category, aboutNote },
     });
-
+    history.push("/");
   };
 
   return (
     <>
       <section class="add-note-form">
-        <Form onSubmit={addNewNote} action="/" style={{
-       backgroundColor: `${currentTheme.backgroundColor}`,
-       color: `${currentTheme.textColor}` }}>
+        <Form
+          onSubmit={addNewNote}
+          action="/"
+          style={{
+            backgroundColor: `${currentTheme.backgroundColor}`,
+            color: `${currentTheme.textColor}`,
+          }}
+        >
           <FormGroup>
             <Label for="subject">Subject : </Label>
             <Input
