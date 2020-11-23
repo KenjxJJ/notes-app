@@ -2,9 +2,15 @@ import React, { useContext, useState, useEffect } from "react";
 
 import { Form, FormGroup, Input, Label, Button } from "reactstrap";
 import { NotesContext } from "../contexts/NotesContext";
+import {ThemeContext} from "../contexts/ThemeContext";
+import AppTheme from "../Colors";
+
 import { useHistory, Link } from "react-router-dom";
 
 const EditNotePage = (route) => {
+  const theme = useContext(ThemeContext)[0];
+  const currentTheme = AppTheme[theme];
+
   let history = useHistory();
   const { notes, dispatch } = useContext(NotesContext);
   const currentNoteId = route.match.params.id;
@@ -50,7 +56,9 @@ const EditNotePage = (route) => {
   return (
     <>
       <section class="edit-note-form m-auto mw-50">
-        <Form onSubmit={onSubmit} action="/">
+        <Form onSubmit={onSubmit} action="/" style={{
+       backgroundColor: `${currentTheme.backgroundColor}`,
+       color: `${currentTheme.textColor}` }} >
           <FormGroup>
             <Label for="subject">Subject : </Label>
             <Input

@@ -10,8 +10,13 @@ import {
   Button,
 } from "reactstrap";
 import { Link } from "react-router-dom";
+import AppTheme from "../Colors";
+import {ThemeContext} from "../contexts/ThemeContext";
 
-const HomePage = () => {
+const HomePage = () => {  
+  const theme = useContext(ThemeContext)[0];
+  const currentTheme = AppTheme[theme];
+
   const { notes, dispatch } = useContext(NotesContext);
   // localStorage.setItem("notes", JSON.stringify(notes));
   console.log(notes);
@@ -25,7 +30,9 @@ const HomePage = () => {
 
   return (
     <>
-      <main className="container-fluid">
+      <main className="container-fluid pt-3" style={{
+       backgroundColor: `${currentTheme.backgroundColor}`,
+       color: `${currentTheme.textColor}` }} >
         <h1>Notes</h1>
         <p className="flex-column">
           <small className="d-block font-italic">
@@ -36,7 +43,9 @@ const HomePage = () => {
           {notes.map((note, index) => {
             return (
               <>
-                <Card className="note">
+                <Card className="note" style={{
+       backgroundColor: `${currentTheme.backgroundColor}`,
+       color: `${currentTheme.textColor}` }} >
                   <CardTitle
                     className="note-title"
                     id={"toggler" + ++index}
@@ -44,7 +53,7 @@ const HomePage = () => {
                   >
                     {note.subject}
                   </CardTitle>
-                  <p>{note.category}</p>
+                  <p style={{color: "orangered"}}>{note.category}</p>
                   <small className="creation-date">
                     {new Date(
                       note.createdOn.split("T")[0]

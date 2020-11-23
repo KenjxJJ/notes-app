@@ -2,8 +2,13 @@ import React, { useContext, useState } from "react";
 
 import { Form, FormGroup, Input, Label, Button } from "reactstrap";
 import { NotesContext } from "../contexts/NotesContext";
+import { ThemeContext } from "../contexts/ThemeContext";
+import AppTheme from "../Colors";
 
 const AddNote = () => {
+  const theme = useContext(ThemeContext)[0];
+  const currentTheme = AppTheme[theme];
+
   const [subject, setSubject] = useState("");
   const [date, setDate] = useState("");
   const [category, setCategory] = useState("");
@@ -11,6 +16,7 @@ const AddNote = () => {
   const { dispatch } = useContext(NotesContext);
 
   const addNewNote = (e) => {
+    
     e.preventDefault();
     dispatch({
       type: "CREATE_NOTE",
@@ -22,7 +28,9 @@ const AddNote = () => {
   return (
     <>
       <section class="add-note-form">
-        <Form onSubmit={addNewNote} action="/">
+        <Form onSubmit={addNewNote} action="/" style={{
+       backgroundColor: `${currentTheme.backgroundColor}`,
+       color: `${currentTheme.textColor}` }}>
           <FormGroup>
             <Label for="subject">Subject : </Label>
             <Input

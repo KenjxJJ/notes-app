@@ -12,8 +12,14 @@ import {
 } from "reactstrap";
 
 import { AuthContext } from "../contexts/AuthContext";
+import ThemeToggler from "../components/ThemeToggler";
+import {ThemeContext} from "../contexts/ThemeContext";
+import AppTheme from "../Colors";
 
 const Navigation = () => {
+  const theme = useContext(ThemeContext)[0];
+  const currentTheme = AppTheme[theme];
+
   const [isOpen, setIsOpen] = useState(false);
   const { isLoggedIn, firebase } = useContext(AuthContext);
 
@@ -26,10 +32,10 @@ const Navigation = () => {
         <NavItem className="ml-auto pr-3">
           <Link className="nav-link" to="/login">Get Started!</Link>
         </NavItem>
-        <NavItem className="ml-auto pr-4">
+        <NavItem className="ml-auto pr-3">
           <Link className="nav-link" to="/">All Notes</Link>
         </NavItem>
-        <NavItem className="ml-auto pr-2">
+        <NavItem className="ml-auto pr-3">
           <Link className="nav-link" to="/addNewNote">Add New</Link>
         </NavItem>
       </>
@@ -61,8 +67,10 @@ const Navigation = () => {
   };
 
   return (
-    <div>
-      <Navbar color="light" light expand="md">
+    <div style={{
+      backgroundColor: `${currentTheme.backgroundColor}`,
+      color: `${currentTheme.textColor}` }}>
+      <Navbar className="pt-3 pb-2" style={{backgroundColor: "#6E6E6E"}} expand="md">
         <NavbarBrand>iNote</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
@@ -71,6 +79,9 @@ const Navigation = () => {
           </Nav>
         </Collapse>
       </Navbar>
+      <small className="mt-2" style={{position: "absolute", right: "10%"}}>
+      Change Theme : <ThemeToggler/>
+      </small>
     </div>
   );
 };

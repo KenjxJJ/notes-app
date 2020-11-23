@@ -8,7 +8,7 @@ import HomePage from "./pages/HomePage";
 import SinglePageNote from "./pages/SingleNotePage";
 import LoginPage from "./pages/LoginPage";
 import AddNewNotePage from "./pages/AddNewNotePage";
-// import Footer from "./components/Footer";
+import Footer from "./components/Footer";
 import Page404Error from "./pages/Page404Error";
 import AuthContextProvider from "./contexts/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -16,10 +16,12 @@ import ProfilePage from "./pages/ProfilePage";
 import EditNotePage from './pages/EditNotePage';
 
 import NotesContextProvider from "./contexts/NotesContext";
+import ThemeContextProvider from "./contexts/ThemeContext";
 
 function App() {
   return (
     <>
+    <ThemeContextProvider>
       <AuthContextProvider>
         <NotesContextProvider>
           <Router>
@@ -36,7 +38,8 @@ function App() {
           </Router>
         </NotesContextProvider>
       </AuthContextProvider>
-      {/* <Footer /> */}
+      <Footer />
+      </ThemeContextProvider>
     </>
   );
 }
