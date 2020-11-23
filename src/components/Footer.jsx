@@ -18,6 +18,7 @@ const Footer = () => {
         <div class="jumbotron text-center mb-0">
           <h3 class="display-3">iNote</h3>
           <p class="lead">Move forward</p>
+          <small>&copy; 2020</small>
         </div>
       </footer>
     </>

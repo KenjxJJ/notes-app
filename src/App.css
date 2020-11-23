@@ -15,7 +15,6 @@
 }
 .nav-link:focus,
 .nav-link:hover, 
-button:focus,
 .navbar-toggler-icon
 {
   outline: none !important;
@@ -54,6 +53,9 @@ main {
   font-style: italic;
   margin-bottom: 1.2rem;
   display: block;
+}
+.completed {
+  text-decoration: line-through;
 }
 
 /*  Login Page */
@@ -152,5 +154,12 @@ footer {
   .add-note-form {
     margin: 0;
     width: 100%;
+  }
+  
+}
+@media(min-width: 750px){
+  .profile{
+    max-width: 750px;
+    margin: auto;
   }
 }

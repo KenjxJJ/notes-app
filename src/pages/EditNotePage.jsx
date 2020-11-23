@@ -26,7 +26,6 @@ const EditNotePage = (route) => {
    new Date(selectedNote.createdOn.split("T")[0]).toISOString().slice(0, 10)
     : new Date().toISOString().slice(0, 10);
 
-  console.log(formattedDate);
   useEffect(() => {
     const notesId = currentNoteId;
     const selectedNote = notes.find((note) => note.index === parseInt(notesId));
