@@ -70,7 +70,7 @@ const Navigation = () => {
     <div style={{
       backgroundColor: `${currentTheme.backgroundColor}`,
       color: `${currentTheme.textColor}` }}>
-      <Navbar className="pt-3 pb-2" style={{backgroundColor: "#6E6E6E"}} expand="md">
+      <Navbar light className="pt-3 pb-2" style={{backgroundColor: "#fd312b"}} expand="md">
         <NavbarBrand>iNote</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>

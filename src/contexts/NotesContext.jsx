@@ -64,7 +64,7 @@ export const NotesContext = createContext();
 const reducerFunction = (state, action) => {
   switch (action.type) {
     case "CREATE_NOTE":      
-      return [
+    notesStore = [
         ...state,
         {
           index: state.length + 1,
@@ -74,6 +74,8 @@ const reducerFunction = (state, action) => {
           about: action.note.aboutNote,
         }
       ];
+      localStorage.setItem("notes", JSON.stringify(notesStore));
+      return notesStore;
       case "DELETE_NOTE":
       notesStore = [
         ...state.filter(

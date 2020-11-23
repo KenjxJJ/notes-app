@@ -14,8 +14,13 @@
   
 }
 .nav-link:focus,
-.nav-link:hover{
-  color: #17a2b8;
+.nav-link:hover, 
+button:focus,
+.navbar-toggler-icon
+{
+  outline: none !important;
+  color: #111 !important;
+  transition: color .5s ease-in;
 }
 
 /* Home Page */
