@@ -26,14 +26,15 @@ const ProfilePage = () => {
           <div className="profile-img">
             <img
               className="profile-img"
-              src={user.photoURL}
+              src={user.photoURL ||`https://picsum.photos/100` }
+              
               alt={user.displayName}
             />
           </div>
-          <div className="profile-other-info">
-            <p>Name : {user.displayName}</p>
-            <p>Email : {user.email}</p>
-            <p>Account Type : {providerId}</p>
+          <div className="pt-3 profile-other-info">
+            <p className="mb-4"> <span className="font-weight-bold">Name</span> : {user.displayName}</p>
+            <p className="mb-4"><span className="font-weight-bold">Email</span> : {user.email}</p>
+            <p><span className="font-weight-bold" >Account Type</span> : {providerId}</p>
 
           </div>
         </main>
