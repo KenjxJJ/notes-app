@@ -1,7 +1,7 @@
 .container-fluid {
   margin-top: 0rem !important;
   padding-top: 0.5rem;
-  min-height: 34rem;
+  min-height: 37rem;
 }
 .navbar-brand {
   color: #fff !important;
@@ -60,8 +60,8 @@ main {
 /* ------------------------ */
 
 .login {
-  padding: 0.4rem 0.3rem 7rem;
-  margin: 2.5rem auto 0rem;
+  padding: 0.4rem 0.3rem 4rem;
+  margin: 2.5rem auto 8rem;
   border: 1px solid #111;
   border-radius: 1rem;
   text-align: center;
