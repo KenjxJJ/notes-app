@@ -1,25 +1,23 @@
-.container-fluid{
+.container-fluid {
   margin-top: 0rem !important;
-  padding-top: .5rem;
+  padding-top: 0.5rem;
   min-height: 34rem;
 }
-.navbar-brand{
-  color:   #fff !important;
+.navbar-brand {
+  color: #fff !important;
   cursor: pointer;
 }
 .nav-link {
   text-transform: uppercase;
   font-size: 0.9rem;
   color: #fff !important;
-  
 }
 .nav-link:focus,
-.nav-link:hover, 
-.navbar-toggler-icon
-{
+.nav-link:hover,
+.navbar-toggler-icon {
   outline: none !important;
   color: #111 !important;
-  transition: color .5s ease-in;
+  transition: color 0.5s ease-in;
 }
 
 /* Home Page */
@@ -60,6 +58,7 @@ main {
 
 /*  Login Page */
 /* ------------------------ */
+
 .login {
   padding: 0.4rem 0.3rem 7rem;
   margin: 2.5rem auto 0rem;
@@ -71,7 +70,10 @@ main {
 .sign_up {
   margin: 0.6rem auto;
 }
-
+#ui-sign-in-email-input, 
+#ui-sign-in-password-input{
+  margin-top: 2rem !important;
+}
 .brand {
   padding-top: 0rem;
   font-size: 4rem;
@@ -137,15 +139,13 @@ textarea {
 footer {
   padding: 0.3rem 0.2rem 2rem;
 }
-.jumbotron{
+.jumbotron {
   background-color: #555;
   border-radius: 0rem;
 }
 
-
-
 /*  Media Queries */
-@media (max-width:798px ){
+@media (max-width: 798px) {
   .add-new-note > * {
     padding: 0.5rem !important;
     margin: 0rem !important;
@@ -155,10 +155,9 @@ footer {
     margin: 0;
     width: 100%;
   }
-  
 }
-@media(min-width: 750px){
-  .profile{
+@media (min-width: 750px) {
+  .profile {
     max-width: 750px;
     margin: auto;
   }
