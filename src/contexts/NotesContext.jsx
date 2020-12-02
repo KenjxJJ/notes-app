@@ -90,8 +90,7 @@ const reducerFunction = (state, action) => {
             action.payload
         ),
       ];
-      localStorage.setItem("notes", JSON.stringify(notesStore));
-      return;
+      return notesStore;
 
     case "EDIT_NOTE":
       const updatedNote = action.payload;

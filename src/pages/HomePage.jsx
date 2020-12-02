@@ -22,7 +22,7 @@ const HomePage = () => {
   // Delete functionality
   const deleteNote = (date) => {
     dispatch({ type: "DELETE_NOTE", payload: date });
-    window.location.reload();
+    
   };
 
   const markComplete = (note) => {
