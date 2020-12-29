@@ -12,6 +12,9 @@ const firebaseConfig = {
     appId: "1:632491420055:web:3a986934c4b84f448c3cd2"
 };
 
+// For firestore
+const settings = { timestampsInSnapshots: true };
+
 firebase.initializeApp(firebaseConfig);
 
 // Configure FirebaseUI.
@@ -29,5 +32,10 @@ export const uiConfig = {
     ]
 };
 
+// Use firestore for storage
+
+export const db = firebase.firestore();  
+
+firebase.firestore().settings(settings);
 
 export default firebase;

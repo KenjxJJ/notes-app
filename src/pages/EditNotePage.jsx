@@ -14,35 +14,36 @@ const EditNotePage = (route) => {
   let history = useHistory();
   const { notes, dispatch } = useContext(NotesContext);
   const currentNoteId = route.match.params.id;
+  
   const [selectedNote, setSelectedNote] = useState({
+    id : currentNoteId,
     index: null,
     subject: "",
     createdOn: "",
     about: "",
   });
 
-  //format date in format YYYY//MM//dd
-   const formattedDate = selectedNote.createdOn !== "" ? 
-   new Date(selectedNote.createdOn.split("T")[0]).toISOString().slice(0, 10)
-    : new Date().toISOString().slice(0, 10);
-
   useEffect(() => {
     const notesId = currentNoteId;
-    const selectedNote = notes.find((note) => note.index === parseInt(notesId));
+    const selectedNote = notes.find((note) => note.id === notesId);
     setSelectedNote(selectedNote);
-   
+    
   }, [currentNoteId, notes]);
+  
+  //format date in format YYYY//MM//dd
+   const formattedDate = selectedNote.createdOn !== "" ? 
+   new Date(selectedNote.createdOn).toISOString().slice(0, 10)
+    : new Date().toISOString().slice(0, 10);
 
   //Submission
   const editNote = (note) => {
-    dispatch({ type: "EDIT_NOTE", payload: note });
+    dispatch({ type: "EDIT_NOTE", payload: note, key: currentNoteId });
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
     editNote(selectedNote);
     history.push("/");
-    window.location.reload();
   };
 
   // Obtain values

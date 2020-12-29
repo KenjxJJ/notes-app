@@ -14,6 +14,7 @@ const AddNote = () => {
   const [date, setDate] = useState("");
   const [category, setCategory] = useState("");
   const [aboutNote, setAboutNote] = useState("");
+
   const { dispatch } = useContext(NotesContext);
 
   let history = useHistory();
@@ -26,15 +27,14 @@ const AddNote = () => {
       note: { subject, date, category, aboutNote },
     });
     history.push("/");
-  };
+  }
 
   return (
     <>
       <section class="add-note-form">
         <Form
           onSubmit={addNewNote}
-          action="/"
-          style={{
+            style={{
             backgroundColor: `${currentTheme.backgroundColor}`,
             color: `${currentTheme.textColor}`,
           }}
