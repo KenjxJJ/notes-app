@@ -98,21 +98,23 @@ const reducerFunction = (state, action) => {
 const NotesContextProvider = (props) => {
   //obtain data from localStorage
   const [notes, dispatch] = useReducer(reducerFunction, allNotesArr);
-
-  const allNotes = [];
-
+  
+  
   useEffect(() => {
+    const allNotes = [];
     const colRef = db.collection("notes");
-
+    
     colRef.onSnapshot((snapshot) => {
-      snapshot.docs.map((doc) => {
+      snapshot.docs.forEach((doc) => {
         // console.log("Doc obj", doc);
         let {id} = doc;
         if(doc.data() !== null) allNotes.push({...doc.data(), id});
-      });
+              });
       dispatch({ type: "GET_NOTES", payload: allNotes });
     });
+      
   },[]);
+
 
   return (
     <NotesContext.Provider value={{ notes: notes, dispatch: dispatch }}>
